@@ -2,19 +2,41 @@
 
 {% load static %}
 {% block content %}
- 
-<div class="jumbotron container row">
-    <div class="col-md-6">
-        <div class="card card-body">
-           <form action="" method="POST" enctype="multipart/form-data">
-              {% csrf_token %}
-                {{productForm.as_p}}
-                <br>
-             <input type="submit" name="submit">
-             </form>
-            </div>
-        </div>
+
+<head>
+    <meta charset="utf-8">
+    <style media="screen">
+        input[name = "product_image"]{
+            margin-top: 5vh;
+            margin-bottom: 3vh;
+            margin-left: 40vw;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h3 class='alert alert-success'>Add Product</h3>
+    <!-- <div class="jumbotron container row"> -->
+        <!-- <div class="col-md-6"> -->
+            <!-- <div class="card card-body"> -->
+               <form action="" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                    <div class="form-group">
+                        <p>
+                            <h3>{{productForm.as_p}}</h3>
+                        </p>
+                        <br>
+                        <input type="submit" value="Add Product" class='btn btn-primary btn-lg' name="submit">
+                    </div>
+                    
+                 </form>
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+     
     </div>
- 
-</div>
+    </center>
+</body>
+
 {% endblock %}
